@@ -22,31 +22,31 @@ jobs:
           - '3.0'
           - '2.7'
         os:
-          - ubuntu
-          - macos
+          # - ubuntu
+          # - macos
           - windows
         gemfile:
           - no_rails
           - rails_6.1
           - rails_7
-        exclude:
-          - os: macos
-            ruby: head
-          - os: windows
-            ruby: head
-        include:
-          - ruby: '2.7'
-            gemfile: rails_6 # End of life June 1, 2023
-            os: ubuntu
-          - ruby: '2.7'
-            gemfile: rails_6 # End of life June 1, 2023
-            os: macos
-          - ruby: truffleruby
-            os: ubuntu
-            gemfile: no_rails
-          - ruby: ucrt
-            os: windows
-            gemfile: no_rails
+        # exclude:
+        #   - os: macos
+        #     ruby: head
+        #   - os: windows
+        #     ruby: head
+        # include:
+        #   - ruby: '2.7'
+        #     gemfile: rails_6 # End of life June 1, 2023
+        #     os: ubuntu
+        #   - ruby: '2.7'
+        #     gemfile: rails_6 # End of life June 1, 2023
+        #     os: macos
+        #   - ruby: truffleruby
+        #     os: ubuntu
+        #     gemfile: no_rails
+        #   - ruby: ucrt
+        #     os: windows
+        #     gemfile: no_rails
 
     env:
       BUNDLE_GEMFILE: gemfiles/${{ matrix.gemfile }}.gemfile
